@@ -4,10 +4,9 @@ classdef Headphone_Pan_Knob < audioPlugin
     %   + 
     %{
         @startuml
-        (*) --> "Get azimuth, elevation, distance"
-        --> "Apply gain change/filtering/delay for distance"
-        --> "Retreive HRTF data for each ear"
-        --> "Convolve signal by HRTF impulse response"
+        (*) --> "Get azimuth, elevation, distance from external UI"
+        --> "Convolve signal by HRTF impulse \n response for given angles \n
+             (Find frequency method better for real time?)"
         --> "Output convolved signals"
         --> (*)
         @enduml
@@ -16,8 +15,9 @@ classdef Headphone_Pan_Knob < audioPlugin
     properties
         % Source distance in meters from listener
         SourceDist = 1;
-        % Source angle in degrees (0=front, 90=left, 180=back, 270=right)
-        SourceAngle = 0;
+        % Source azimuth in degrees (0=front, 90=left, 180=back, 270=right)
+        Azimuth = 0;
+        Elevation = 0;
     end
     properties (Access = private)
         % Use this section to initialize properties that the end-user does not
