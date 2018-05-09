@@ -19,3 +19,7 @@ Plugin Ideas
     + Good problem for deep learning perhaps
         + Conventional programming methods have failed (mostly)
         + Fuzzy solution - vocals reduced by ~30dB is plenty good
++ HRTF Pan Knob
+    + When mixing for headphones, panning does not indicate whether sound is front or back
+    + Using HRTFs and a 360 degree pan knob can mimic the ear's natural response to speakers or musicians in front/behind listener.
+    + Could be combined with spatial audio placement for simple 2D GUI.
